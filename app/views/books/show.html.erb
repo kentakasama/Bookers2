@@ -1,0 +1,28 @@
+<%= render 'users/list', user: current_user, book: @book  %>
+
+<div class="col-xs-9">
+	<h2>Book detail</h2>
+		<table class="table table-hover table-inverse">
+			<tbody>
+				<thred>
+					<tr>
+						<th></th>
+						<th>Title</th>
+						<th>Opinion</th>
+						<th></th>
+						<th></th>
+					</tr>
+					<tr>
+						<th><%= attachment_image_tag @book_detail.user, :user_image,　format: 'jpeg', fallback: "no_image.jpg", size: "40x40" %></th>
+						<th><%= @book_detail.title%></th>
+						<th><%= @book_detail.opinion%></th>
+						<% if @book_detail.user_id == current_user.id %>
+						<th><%= link_to 'Edit', edit_book_path(@book_detail), class: "btn-sm btn-success edit_book_#{@book.id}" %></th>
+						<th><%= link_to 'Destroy', book_path(@book_detail.id), method: :delete, class: "btn-sm btn-danger destroy_book#{@book.id}", data: { confirm: '本当に消しますか？' } %></th>
+						<% end %>
+					</tr>
+				</thred>
+			</tbody>
+		</table>
+</div>
+
