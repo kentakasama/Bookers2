@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'main/top'
+  root to: 'main#top'
   get 'main/about'
   devise_for :users
   resources :books
