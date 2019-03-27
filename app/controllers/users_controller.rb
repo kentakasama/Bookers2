@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   def edit
   	@user = User.find(current_user.id)
+    @book = Book.new
   end
   private
   def user_params
