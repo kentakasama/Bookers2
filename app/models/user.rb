@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :book,  dependent: :destroy
   attachment :user_image
   validates :name, presence: true
-  validates :name, length: { minimum: 2 }
+  validates :name, length: { in: 2..20 }
 end

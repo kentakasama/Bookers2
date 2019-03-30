@@ -13,12 +13,12 @@
 						<th></th>
 					</tr>
 					<tr>
-						<th><%= attachment_image_tag @book_detail.user, :user_image,　format: 'jpeg', fallback: "no_image.jpg", size: "40x40" %></th>
+						<th><%= attachment_image_tag @book_detail.user, :user_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x40" %></th>
 						<th><%= @book_detail.title%></th>
 						<th><%= @book_detail.opinion%></th>
 						<% if @book_detail.user_id == current_user.id %>
-						<th><%= link_to 'Edit', edit_book_path(@book_detail), class: "btn-sm btn-success edit_book_#{@book.id}" %></th>
-						<th><%= link_to 'Destroy', book_path(@book_detail.id), method: :delete, class: "btn-sm btn-danger destroy_book#{@book.id}", data: { confirm: '本当に消しますか？' } %></th>
+						<th><%= link_to 'Edit', edit_book_path(@book_detail), class: "btn-sm btn-success edit_book_#{@book_detail.id}" %></th>
+						<th><%= link_to 'Destroy', book_path(@book_detail.id), method: :delete, class: "btn-sm btn-danger destroy_book#{@book_detail.id}", data: { confirm: '本当に消しますか？' } %></th>
 						<% end %>
 					</tr>
 				</thred>
