@@ -57,9 +57,10 @@ span{
 	padding: 10px 15px;
 }
 .container{
-	width: 1170px;
-	height:540px;
-	margin: 0 auto;
+	margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 div.field, div.actions{
